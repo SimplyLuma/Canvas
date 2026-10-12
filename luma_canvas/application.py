@@ -419,11 +419,12 @@ class CanvasApplication(Adw.Application):
         dialog = Adw.AboutDialog(
             application_name=APP_NAME,
             application_icon=APP_ID,
-            developer_name="Project Luma",
+            developer_name="Simply Luma",
             version="0.1.0",
-            comments="Layout and vector design for Luma.",
-            license_type=Gtk.License.APACHE_2_0,
-            website="https://projectluma.org",
+            comments="Visual design and interactive prototyping with Luma UI.",
+            license_type=Gtk.License.CUSTOM,
+            license="Canvas includes Apache-2.0 and MPL-2.0 software. The bundled toolkit also retains LGPL-2.1-or-later material. Artwork, icons and fonts keep their separate licenses. See https://github.com/SimplyLuma/Canvas/blob/main/THIRD_PARTY_NOTICES.md for complete notices and license texts.",
+            website="https://github.com/SimplyLuma/Canvas",
         )
         dialog.present(self.get_active_window())
 
