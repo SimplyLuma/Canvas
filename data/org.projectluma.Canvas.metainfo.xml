@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <component type="desktop-application">
   <id>org.projectluma.Canvas</id>
   <name>Canvas</name>
@@ -13,10 +13,20 @@
     <p>Canvas combines interface frames, editable vector paths, components, pages, linked text, styles, and prototypes in one responsive native Luma application.</p>
   </description>
   <launchable type="desktop-id">org.projectluma.Canvas.desktop</launchable>
-  <provides><binary>luma-canvas</binary></provides>
+  <provides>
+    <binary>luma-canvas</binary>
+  </provides>
   <custom>
     <value key="org.projectluma.ApplicationContract">0.2</value>
   </custom>
-  <content_rating type="oars-1.1"/>
-  <releases><release version="0.1.0" date="2026-10-12"/></releases>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="0.1.0" date="2026-10-12" />
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Canvas editing a visual design with native Luma controls</caption>
+      <image type="source" width="1106" height="679">https://dl.simplyluma.com/media/org.projectluma.Canvas/be27edd7a732961e77e67b00b878d701192d52c96b4b9c7458f8e7361e10acda.png</image>
+    </screenshot>
+  </screenshots>
 </component>

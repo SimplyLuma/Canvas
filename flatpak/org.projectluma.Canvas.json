@@ -49,7 +49,8 @@
         "install -Dm644 luma-app.toml /app/share/luma-canvas/luma-app.toml",
         "install -d /app/share/licenses/org.projectluma.Canvas",
         "install -Dm644 LICENSE.md /app/share/licenses/org.projectluma.Canvas/LICENSE.md && install -Dm644 vendor/luma-platform/LICENSE.md /app/share/licenses/org.projectluma.Canvas/luma-platform/LICENSE.md",
-        "cp -a LICENSES THIRD_PARTY_NOTICES.md /app/share/licenses/org.projectluma.Canvas/"
+        "cp -a LICENSES THIRD_PARTY_NOTICES.md /app/share/licenses/org.projectluma.Canvas/",
+        "install -Dm644 docs/images/Canvas-0.1.0-desktop.png /app/share/luma-app-media/be27edd7a732961e77e67b00b878d701192d52c96b4b9c7458f8e7361e10acda.png"
       ],
       "sources": [
         {

@@ -5,6 +5,8 @@ frames, vectors and pages, use components and auto layout, edit fills and
 effects, and connect interactive prototypes. Your designs save automatically;
 the design library supports search, projects, stars and grid/list views.
 
+![Canvas editing a design](docs/images/Canvas-0.1.0-desktop.png)
+
 ## Install
 
 The signed x86_64 Flatpak is distributed through Luma Depot. The shared Luma
