@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/vnd.projectluma.canvas+zip">
+    <comment>Luma Canvas document</comment>
+    <glob pattern="*.canvas"/>
+    <sub-class-of type="application/zip"/>
+    <alias type="application/vnd.projectluma.layouts+zip"/>
+  </mime-type>
+  <!-- Documents written while the application was called Layouts still open. -->
+  <mime-type type="application/vnd.projectluma.layouts+zip">
+    <comment>Luma Canvas document (legacy)</comment>
+    <glob pattern="*.layouts"/>
+    <sub-class-of type="application/zip"/>
+  </mime-type>
+</mime-info>

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Canvas
+Comment=Design interfaces, vectors, and publications in one document
+Exec=luma-canvas %U
+Icon=org.projectluma.Canvas
+Terminal=false
+Type=Application
+Categories=Graphics;2DGraphics;VectorGraphics;Publishing;
+MimeType=application/vnd.projectluma.canvas+zip;application/vnd.projectluma.layouts+zip;image/svg+xml;
+Keywords=Design;Vector;SVG;Layout;Prototype;Publication;
+StartupNotify=true
+DBusActivatable=false

@@ -1,0 +1,271 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Canvas content only. Window chrome, islands and menus belong to the toolkit
+ * and AppKit. Type follows CANVAS-SPEC 14.2: 13px rows and values, 11px/650
+ * section titles and 11px labels, nothing larger outside empty states. */
+
+/* ── Left column: the rail on the window ground, then the Layers island ── */
+
+.canvas-left-column { background: transparent; }
+.canvas-gutter { background: transparent; }
+.canvas-rail { padding: 0 0 8px 0; }
+.canvas-rail-scroll { background: transparent; }
+.canvas-rail .canvas-tool {
+  min-width: 32px; min-height: 32px; padding: 0; margin: 0;
+  border: 0; border-radius: 8px; background: transparent; box-shadow: none; color: @luma_muted;
+}
+.canvas-rail .canvas-tool:hover { background: @luma_hover; color: @luma_ink; }
+.canvas-rail .canvas-tool:checked { background: @luma_selected; color: @luma_ink; }
+.canvas-rail .canvas-tool image { -gtk-icon-size: 18px; }
+.canvas-rail .canvas-tool-lock { -gtk-icon-size: 8px; margin: 2px 2px 0 0; color: @luma_accent; }
+.canvas-rail .canvas-flyout-mark { -gtk-icon-size: 8px; margin: 0 1px 1px 0; opacity: .7; }
+
+.canvas-panel-tabs-row { min-height: 40px; padding: 6px 0; }
+.canvas-inspector .canvas-panel-tabs-row { padding: 6px 8px; border-bottom: 1px solid @luma_line_faint; }
+.canvas-tabs.luma-connected-buttons { padding: 2px; border-radius: 8px; background: @luma_fill; box-shadow: none; }
+.canvas-tabs.luma-connected-buttons > button {
+  min-height: 24px; min-width: 0; padding: 0 8px; border-radius: 6px;
+  background: transparent; color: @luma_muted; font-size: 13px; font-weight: 550; box-shadow: none;
+}
+.canvas-tabs.luma-connected-buttons > button:hover { background: transparent; color: @luma_ink; }
+.canvas-tabs.luma-connected-buttons > button:checked { background: @luma_content; color: @luma_ink; font-weight: 650; box-shadow: 0 1px 2px alpha(@luma_ink, .08); }
+
+/* ── Layers ──────────────────────────────────────────────────────────── */
+
+.canvas-layers-panel { background: transparent; }
+.canvas-layers-island .canvas-layers-panel { padding: 0 6px; }
+.canvas-layers-scroll, .canvas-layer-list { background: transparent; }
+.canvas-layer-list > row { min-height: 28px; padding: 0 4px 0 0; margin: 0; border-radius: 6px; background: transparent; }
+.canvas-layer-list > row:hover { background: @luma_hover; }
+.canvas-layer-list > row:selected { background: @luma_selected; }
+.canvas-layer-list > row:selected .canvas-layer-row label { font-weight: 550; }
+.canvas-layer-list treeexpander { min-height: 28px; }
+.canvas-layer-list treeexpander indent { min-width: 16px; -gtk-icon-size: 0; }
+.canvas-layer-list treeexpander expander { min-width: 16px; min-height: 16px; -gtk-icon-size: 14px; color: @luma_muted; }
+.canvas-layer-row { min-height: 28px; font-size: 13px; color: @luma_ink; }
+.canvas-layer-row label { font-size: 13px; font-weight: 400; }
+.canvas-layer-row.top-level-frame label { font-weight: 550; }
+.canvas-layer-row .canvas-layer-glyph { -gtk-icon-size: 14px; color: @luma_muted; }
+.canvas-layer-row.hidden-layer label, .canvas-layer-row.hidden-layer .canvas-layer-glyph { color: @luma_faint; }
+.canvas-layer-row .canvas-row-toggle {
+  min-width: 24px; min-height: 24px; padding: 0; border: 0; border-radius: 6px;
+  background: transparent; box-shadow: none; color: @luma_muted;
+}
+.canvas-layer-row .canvas-row-toggle image { -gtk-icon-size: 14px; }
+.canvas-layer-row .canvas-row-toggle:hover { background: @luma_hover; color: @luma_ink; }
+/* The containers the selection works in stand out; unrelated rows recede. */
+.canvas-layer-row.out-of-scope label, .canvas-layer-row.out-of-scope .canvas-layer-glyph { opacity: .5; }
+.canvas-layer-row.scope-root label { font-weight: 550; }
+.canvas-layer-row.scope-root .canvas-layer-glyph { color: @luma_ink; }
+.canvas-layer-row.drop-above { box-shadow: inset 0 2px @luma_ink; }
+.canvas-layer-row.drop-below { box-shadow: inset 0 -2px @luma_ink; }
+.canvas-layer-row.drop-into { background: @luma_hover; box-shadow: inset 0 0 0 2px @luma_ink; border-radius: 6px; }
+.canvas-layer-rename, .canvas-header-rename { min-height: 24px; font-size: 13px; }
+
+.canvas-layers-search { margin: 0 0 6px 0; }
+.canvas-search-results, .canvas-asset-list { background: transparent; }
+.canvas-search-results > row, .canvas-asset-list > row { min-height: 28px; padding: 0 6px; border-radius: 6px; background: transparent; }
+.canvas-search-results > row:hover { background: @luma_hover; }
+.canvas-asset-row { min-height: 28px; font-size: 13px; }
+.canvas-row-meta { font-size: 11px; font-weight: 400; color: @luma_muted; font-variant-numeric: tabular-nums; }
+.canvas-panel-note { padding: 8px 6px; font-size: 11px; color: @luma_muted; }
+
+.canvas-group-head { min-height: 28px; margin: 8px -6px 0; padding: 0 12px; border-top: 1px solid @luma_line_faint; }
+.canvas-group-label { padding: 8px 6px 4px; font-size: 11px; font-weight: 600; color: @luma_muted; }
+.canvas-group-head .canvas-group-label { padding: 0; }
+.canvas-page-list { background: transparent; margin-bottom: 4px; }
+.canvas-page-list > row { min-height: 28px; padding: 0 8px; border-radius: 6px; background: transparent; font-size: 13px; }
+.canvas-page-list > row:hover { background: @luma_hover; }
+.canvas-page-list > row:selected { background: @luma_selected; color: @luma_ink; }
+.canvas-page-list > row:selected label { font-weight: 550; }
+.canvas-layers-flyout .canvas-layers-panel { padding: 0 6px 6px; }
+
+/* ── Canvas island ───────────────────────────────────────────────────── */
+
+.canvas-toolbar { min-height: 40px; padding: 0 8px; }
+.canvas-toolbar .canvas-dropbutton > button {
+  min-height: 28px; min-width: 0; padding: 0 8px; border: 0; border-radius: 8px;
+  background: transparent; box-shadow: none; color: @luma_ink; font-size: 13px; font-weight: 400;
+}
+.canvas-toolbar .canvas-dropbutton > button:hover { background: @luma_hover; }
+.canvas-toolbar .canvas-dropbutton > button:checked { background: @luma_selected; }
+.canvas-toolbar .canvas-dropbutton > button image { -gtk-icon-size: 12px; color: @luma_muted; }
+.canvas-toolbar .canvas-document-button > button label { font-weight: 650; }
+.canvas-toolbar .canvas-zoom-button > button label { font-variant-numeric: tabular-nums; }
+.canvas-toolbar .canvas-toolbar-icon, .canvas-toolbar .canvas-toolbar-icon > button { min-width: 28px; min-height: 28px; padding: 0; border: 0; border-radius: 8px; background: transparent; box-shadow: none; color: @luma_muted; }
+.canvas-toolbar .canvas-toolbar-icon:hover, .canvas-toolbar .canvas-toolbar-icon > button:hover { background: @luma_hover; color: @luma_ink; }
+.canvas-toolbar .canvas-toolbar-icon > button:checked { background: @luma_selected; color: @luma_ink; }
+.canvas-save-status { margin-left: -4px; font-size: 11px; font-weight: 550; color: @luma_muted; }
+.canvas-rename-row { padding: 4px 4px 6px; }
+.canvas-rename-entry { min-height: 28px; font-size: 13px; font-weight: 550; }
+.canvas-field-error { font-size: 11px; color: @luma_destructive; }
+.canvas-zoom-entry { min-height: 28px; margin: 4px 4px 2px; font-size: 13px; font-variant-numeric: tabular-nums; }
+
+.canvas-canvas-frame { background: mix(@luma_content, @luma_ink, .04); }
+.canvas-dock { margin: 12px; padding: 4px; border-radius: 12px; background: @luma_content; box-shadow: 0 0 0 1px @luma_line, 0 6px 18px alpha(@luma_ink, .12); }
+.canvas-dock .canvas-dock-button { min-width: 44px; min-height: 44px; border-radius: 10px; }
+.canvas-dock .canvas-dock-button image { -gtk-icon-size: 18px; }
+
+.canvas-versions-panel { background: @luma_content; border-right: 1px solid @luma_line_faint; }
+.canvas-versions-head { min-height: 40px; padding: 0 12px; }
+.canvas-versions-title { font-size: 13px; font-weight: 650; }
+.canvas-versions-list { background: transparent; padding: 0 6px; }
+.canvas-versions-list > row { min-height: 44px; padding: 4px 6px; border-radius: 6px; background: transparent; }
+.canvas-versions-list > row:selected { background: @luma_selected; }
+.canvas-version-title { font-size: 13px; }
+.canvas-version-title.named { font-weight: 650; }
+.canvas-version-thumb { border-radius: 4px; background: @luma_fill; }
+.canvas-versions-actions { padding: 12px; border-top: 1px solid @luma_line_faint; }
+
+/* ── Inspector ───────────────────────────────────────────────────────── */
+
+.canvas-inspector { background: transparent; }
+.canvas-inspector-column { padding-bottom: 12px; }
+.canvas-section { padding: 12px 12px 16px; border-top: 1px solid @luma_line_faint; }
+.canvas-section.collapsed { padding-bottom: 12px; }
+.canvas-section-head { min-height: 24px; }
+.canvas-section-body { margin-top: 8px; }
+.canvas-section-untitled .canvas-section-body, .canvas-section-header-block .canvas-section-body { margin-top: 0; }
+.canvas-section-align { padding-top: 8px; padding-bottom: 8px; }
+.canvas-section-header-block { padding: 8px 8px 8px 12px; }
+.canvas-section-title {
+  min-height: 24px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none;
+}
+.canvas-section-title label { font-size: 11px; font-weight: 650; color: @luma_ink; }
+.canvas-section-title:hover label { color: @luma_ink; }
+.canvas-section .canvas-section-action, .canvas-section-header-block .canvas-section-action,
+.canvas-section .canvas-row-action { min-width: 24px; min-height: 24px; padding: 0; border-radius: 6px; color: @luma_muted; }
+.canvas-section .canvas-section-action image, .canvas-section .canvas-row-action image { -gtk-icon-size: 14px; }
+.canvas-inspector-header { min-height: 28px; }
+.canvas-header-glyph { -gtk-icon-size: 14px; color: @luma_muted; }
+.canvas-header-name { font-size: 13px; font-weight: 650; color: @luma_ink; }
+.canvas-inspector-note { margin: 16px 12px; font-size: 13px; color: @luma_muted; }
+.canvas-empty-line { font-size: 11px; color: @luma_muted; }
+
+.canvas-field-grid { }
+.canvas-number {
+  min-height: 28px; min-width: 0; padding: 0; border-radius: 6px;
+  background: @luma_fill; box-shadow: inset 0 0 0 1px transparent;
+}
+.canvas-number:hover { box-shadow: inset 0 0 0 1px @luma_line; }
+.canvas-number:focus-within { box-shadow: inset 0 0 0 1px @luma_accent; }
+.canvas-number .luma-numeric-label { min-width: 20px; padding: 0 0 0 8px; font-size: 11px; font-weight: 550; color: @luma_muted; }
+.canvas-number .canvas-field-glyph { min-width: 14px; margin: 0 0 0 8px; -gtk-icon-size: 14px; color: @luma_muted; }
+.canvas-number .luma-numeric-entry, .canvas-number entry {
+  min-height: 28px; min-width: 0; padding: 0 6px; border: 0; border-radius: 0;
+  background: transparent; box-shadow: none; font-size: 13px; color: @luma_ink; font-variant-numeric: tabular-nums;
+}
+.canvas-number entry > text { min-height: 26px; }
+.canvas-number .luma-numeric-unit { padding: 0 8px 0 0; font-size: 11px; font-weight: 400; color: @luma_faint; }
+.canvas-number.mixed .luma-numeric-entry { color: @luma_muted; }
+.canvas-paint-opacity { min-width: 56px; }
+.canvas-paint-opacity .luma-numeric-entry { padding: 0 2px 0 8px; }
+
+.canvas-dropdown > button {
+  min-height: 28px; padding: 0 8px; border-radius: 6px; background: @luma_fill;
+  box-shadow: none; font-size: 13px; font-weight: 400; color: @luma_ink;
+}
+.canvas-dropdown > button:hover { background: @luma_hover; }
+.canvas-dropdown > button arrow, .canvas-dropdown > button image { -gtk-icon-size: 12px; color: @luma_muted; }
+
+.canvas-paint-row { min-height: 28px; }
+.canvas-paint-row.hidden-paint .canvas-hex, .canvas-paint-row.hidden-paint .canvas-paint-opacity { opacity: .55; }
+/* A stack of paints: top paint first, rows reorder by dragging. */
+.canvas-stack-row { border-radius: 6px; }
+.canvas-stack-row:hover { background: alpha(@luma_ink, .03); }
+.canvas-stack-row.dragging { opacity: .5; }
+.canvas-stack-row.drop-target { box-shadow: inset 0 2px 0 @luma_accent; }
+.canvas-hex.canvas-paint-kind { color: @luma_muted; }
+.canvas-hex, .canvas-text-field {
+  min-height: 28px; min-width: 0; padding: 0 8px; border-radius: 6px; background: @luma_fill;
+  box-shadow: none; font-size: 13px; color: @luma_ink; font-variant-numeric: tabular-nums;
+}
+.canvas-hex:focus-within, .canvas-text-field:focus-within { box-shadow: inset 0 0 0 1px @luma_accent; }
+.canvas-swatch-button { min-width: 20px; min-height: 20px; padding: 4px; border: 0; border-radius: 6px; background: transparent; box-shadow: none; }
+.canvas-swatch-button:hover { background: @luma_hover; }
+.canvas-icon-toggle { min-width: 24px; min-height: 24px; padding: 0; border-radius: 6px; }
+.canvas-icon-toggle image { -gtk-icon-size: 14px; }
+.canvas-icon-toggle:checked { background: @luma_selected; color: @luma_ink; }
+.canvas-section-appearance .canvas-icon-toggle, .canvas-section-layout .canvas-icon-toggle, .canvas-section-position .canvas-icon-toggle { min-height: 28px; min-width: 28px; }
+
+.canvas-align-row { margin: 0 -4px; }
+.canvas-align-button {
+  min-width: 0; min-height: 28px; padding: 0; border: 0; border-radius: 6px;
+  background: transparent; box-shadow: none; color: alpha(@luma_ink, .82);
+}
+.canvas-align-button image { -gtk-icon-size: 16px; }
+.canvas-align-button:hover { background: @luma_hover; color: @luma_ink; }
+.canvas-align-button:active { background: @luma_selected; }
+.canvas-align-button:disabled { color: alpha(@luma_ink, .3); }
+
+.canvas-field-label { font-size: 11px; font-weight: 550; color: @luma_muted; }
+.canvas-settings-sheet .canvas-dropdown, .canvas-settings-sheet .canvas-text-field { min-width: 120px; }
+.canvas-text-content-frame { border-radius: 6px; background: @luma_fill; }
+.canvas-text-content { padding: 6px 8px; background: transparent; font-size: 13px; color: @luma_ink; }
+.canvas-export-button { min-height: 28px; }
+.canvas-quiet-button {
+  min-height: 28px; padding: 0 10px; border: 0; border-radius: 6px; background: @luma_fill;
+  box-shadow: none; color: @luma_ink; font-size: 12px; font-weight: 550;
+}
+.canvas-quiet-button:hover { background: @luma_hover; }
+.canvas-command-results > row { min-height: 28px; padding: 0 8px; border-radius: 6px; font-size: 13px; }
+
+.canvas-choice-group.luma-connected-buttons.compact { padding: 2px; border-radius: 6px; background: @luma_fill; }
+.canvas-choice-group.luma-connected-buttons.compact > button { min-width: 0; min-height: 24px; padding: 0 4px; border-radius: 4px; font-size: 11px; font-weight: 550; color: @luma_muted; }
+.canvas-choice-group.luma-connected-buttons.compact > button:checked { background: @luma_content; color: @luma_ink; box-shadow: 0 1px 2px alpha(@luma_ink, .08); }
+.canvas-sheet-title { font-size: 13px; font-weight: 650; color: @luma_ink; }
+.canvas-font-button { min-height: 28px; padding: 0 8px; border-radius: 6px; background: @luma_fill; box-shadow: none; font-size: 13px; font-weight: 400; color: @luma_ink; }
+.canvas-font-button:hover { background: @luma_hover; }
+.canvas-font-button > box > image { color: @luma_muted; }
+.canvas-font-button .canvas-font-missing { color: @luma_amber; }
+.canvas-font-list { background: transparent; }
+.canvas-font-list > row { min-height: 32px; padding: 0 8px; border-radius: 6px; }
+.canvas-font-list > row:selected { background: @luma_selected; color: @luma_ink; }
+.canvas-font-row label { font-size: 13px; }
+
+/* ── Compact values (owner direction, 2026-09-15) ──────────────────────
+ * Inspector values, dropdowns, hex fields, tabs and the zoom number are 12px
+ * like the color picker beside them, not the 13px body size: design tool
+ * panels are dense. Labels and units stay 11px, figures stay tabular. */
+.canvas-number .luma-numeric-entry, .canvas-number entry, .canvas-number entry > text,
+.canvas-hex, .canvas-hex > text, .canvas-text-field, .canvas-text-field > text,
+.canvas-dropdown > button, .canvas-dropdown > button label,
+.canvas-font-button, .canvas-font-button > box > label,
+.canvas-text-content,
+.canvas-rename-entry, .canvas-rename-entry > text, .canvas-zoom-entry, .canvas-zoom-entry > text,
+.canvas-font-search, .canvas-font-search > text { font-size: 12px; font-weight: 400; }
+.canvas-number entry > text, .canvas-hex > text, .canvas-zoom-entry > text { font-feature-settings: "tnum"; }
+.canvas-tabs.luma-connected-buttons > button, .canvas-tabs.luma-connected-buttons > button label { font-size: 12px; }
+.canvas-toolbar .canvas-zoom-button > button, .canvas-toolbar .canvas-zoom-button > button label { font-size: 12px; font-feature-settings: "tnum"; }
+.canvas-toolbar .canvas-dropbutton > button label { font-size: 12px; }
+.canvas-toolbar .canvas-document-button > button label { font-size: 13px; }
+.canvas-header-name { font-size: 12px; }
+.canvas-inspector-note { font-size: 12px; }
+.canvas-font-search { min-height: 28px; }
+.canvas-font-row label { font-size: 12px; }
+.canvas-sheet-title { font-size: 12px; }
+.canvas-clip-content label { font-size: 12px; }
+.canvas-versions-title, .canvas-version-title { font-size: 12px; }
+
+/* ── Export (Figma's Export section) ─────────────────────────────────────
+ * A row per export setting: size, suffix, format, remove. Values are 12px
+ * like the rest of the inspector; the size field opens the app's size menu. */
+.canvas-export-rows { margin: 0 -2px; }
+.canvas-export-row { min-height: 28px; }
+.canvas-export-size { min-width: 0; padding: 0 2px 0 8px; }
+.canvas-export-size > text { min-width: 30px; }
+.canvas-export-size > image { -gtk-icon-size: 12px; margin-left: 2px; color: @luma_muted; }
+.canvas-export-size:disabled { opacity: .55; }
+.canvas-export-suffix { min-width: 0; }
+.canvas-export-suffix > text > placeholder { color: @luma_faint; }
+.canvas-export-format > button { min-width: 0; padding: 0 6px 0 8px; }
+.canvas-export-actions { margin-top: 2px; }
+.canvas-export-button, .canvas-export-button label { min-height: 28px; font-size: 12px; font-weight: 550; }
+.canvas-export-frames, .canvas-export-frames label { font-size: 12px; }
+
+/* Export content uses the shared creative field family. */
+#cv-right-panel .canvas-inspector-column { padding-bottom: 0; }
+#cv-right-panel .canvas-section { padding-bottom: 8px; }
+
+/* Clip the drawing surface to the shared window content radius. */
+#cv-work { border-radius: var(--lumaui-window-island-radius); }
+window.maximized #cv-work, window.fullscreen #cv-work { border-radius: 0; }

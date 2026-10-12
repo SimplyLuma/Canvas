@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.projectluma.Canvas</id>
+  <name>Canvas</name>
+  <summary>Unified visual design and page composition</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0 AND MPL-2.0</project_license>
+  <developer id="org.projectluma">
+    <name>Project Luma</name>
+  </developer>
+  <url type="homepage">https://github.com/SimplyLuma/Canvas</url>
+  <description>
+    <p>Canvas combines interface frames, editable vector paths, components, pages, linked text, styles, and prototypes in one responsive native Luma application.</p>
+  </description>
+  <launchable type="desktop-id">org.projectluma.Canvas.desktop</launchable>
+  <provides><binary>luma-canvas</binary></provides>
+  <custom>
+    <value key="org.projectluma.ApplicationContract">0.2</value>
+  </custom>
+  <content_rating type="oars-1.1"/>
+  <releases><release version="0.1.0" date="2026-10-12"/></releases>
+</component>

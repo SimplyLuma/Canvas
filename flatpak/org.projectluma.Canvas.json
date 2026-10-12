@@ -1,0 +1,63 @@
+{
+  "runtime": "org.projectluma.Platform",
+  "runtime-version": "44",
+  "sdk": "org.projectluma.Sdk",
+  "command": "luma-canvas",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--device=dri",
+    "--env=PYTHONPATH=/app/share/luma-canvas:/app/share/luma-appkit",
+    "--env=GI_TYPELIB_PATH=/app/lib/girepository-1.0",
+    "--env=LD_LIBRARY_PATH=/app/lib",
+    "--env=LUMA_APPKIT_ICON_PATH=/app/share/icons/hicolor/scalable/actions"
+  ],
+  "modules": [
+    {
+      "name": "luma-platform",
+      "buildsystem": "meson",
+      "subdir": "vendor/luma-platform",
+      "config-opts": [
+        "--libdir=lib",
+        "--buildtype=release"
+      ],
+      "post-install": [
+        "cp -a /run/build/luma-platform/vendor/luma-platform/appkit/luma_appkit /run/build/luma-platform/vendor/luma-platform/appkit/*.css /run/build/luma-platform/vendor/luma-platform/appkit/fonts /app/share/luma-appkit/",
+        "cp /run/build/luma-platform/vendor/luma-platform/ui/luma-ui.css /app/share/luma-appkit/",
+        "cp -a /run/build/luma-platform/vendor/luma-icons/. /app/share/icons/hicolor/scalable/actions/"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": ".."
+        }
+      ]
+    },
+    {
+      "name": "canvas",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm755 bin/luma-canvas /app/bin/luma-canvas",
+        "install -d /app/share/luma-canvas/luma_canvas",
+        "cp -a luma_canvas/. /app/share/luma-canvas/luma_canvas/",
+        "install -Dm644 data/org.projectluma.Canvas.desktop /app/share/applications/org.projectluma.Canvas.desktop",
+        "install -Dm644 data/org.projectluma.Canvas.metainfo.xml /app/share/metainfo/org.projectluma.Canvas.metainfo.xml",
+        "install -Dm644 data/org.projectluma.Canvas.mime.xml /app/share/mime/packages/org.projectluma.Canvas.xml",
+        "install -Dm644 data/org.projectluma.Canvas.svg /app/share/icons/hicolor/scalable/apps/org.projectluma.Canvas.svg",
+        "install -d /app/share/luma-canvas/icons && cp -a data/icons/hicolor /app/share/luma-canvas/icons/",
+        "install -Dm644 luma-app.toml /app/share/luma-canvas/luma-app.toml",
+        "install -d /app/share/licenses/org.projectluma.Canvas",
+        "install -Dm644 LICENSE.md /app/share/licenses/org.projectluma.Canvas/LICENSE.md && install -Dm644 vendor/luma-platform/LICENSE.md /app/share/licenses/org.projectluma.Canvas/luma-platform/LICENSE.md",
+        "cp -a LICENSES THIRD_PARTY_NOTICES.md /app/share/licenses/org.projectluma.Canvas/"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": ".."
+        }
+      ]
+    }
+  ],
+  "app-id": "org.projectluma.Canvas"
+}

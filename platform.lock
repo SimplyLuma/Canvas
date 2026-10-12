@@ -1,0 +1,10 @@
+schema = 1
+channel = "release"
+[luma]
+repository = "https://github.com/nmcmil/ProjectLuma"
+commit = "822bec21f9cfe2e831007c547c7619c6381b9644"
+[platform]
+path = "vendor/luma-platform"
+package = "luma-developer-platform"
+version = "0.1.0"
+status = "qualified-native-hotfix"

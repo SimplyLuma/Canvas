@@ -1,0 +1,48 @@
+{
+  "source": "Studio v70, luma-next-70.html, Canvas seed()",
+  "name": "Launch kit",
+  "page": "Launch",
+  "pages": ["Launch", "Brand", "Archive"],
+  "selected_ids": ["n4"],
+  "swatches": ["#16161a", "#ffffff", "#f6f3ee", "#e9e2d6", "#1a1f3a", "#6f7cff", "#aab4ff", "#e8553b", "#f2b544", "#3ddc84", "#5a5a60", "#c9ccdf"],
+  "text_styles": [
+    {"name":"Display","font":"Figtree","weight":650,"size":96},
+    {"name":"Heading","font":"Figtree","weight":600,"size":48},
+    {"name":"Body","font":"Figtree","weight":400,"size":24},
+    {"name":"Serif","font":"Instrument Serif","weight":400,"size":64}
+  ],
+  "components": ["Button", "Badge", "Photo card"],
+  "photo_choices": ["life-hero-home.webp", "life-ari-street.webp", "life-professionals-loft.webp", "life-suite-bg-darkroom.webp", "life-suite-bg-stage.webp", "life-sync-terrace.webp"],
+  "assets": {
+    "home": "life-hero-home.webp",
+    "studio": "life-hero-studio.webp",
+    "writing": "life-hero-writing.webp",
+    "terrace": "life-sync-terrace.webp",
+    "ari-street": "life-ari-street.webp",
+    "loft": "life-professionals-loft.webp",
+    "darkroom": "life-suite-bg-darkroom.webp",
+    "stage": "life-suite-bg-stage.webp"
+  },
+  "nodes": [
+    {"id":"n1","t":"frame","name":"Post","x":0,"y":0,"w":1080,"h":1080,"fill":"linear-gradient(160deg, #1d2346, #0b0d18)"},
+    {"id":"n2","t":"ellipse","name":"Glow","parent":"n1","x":520,"y":-220,"w":820,"h":820,"fill":"radial-gradient(circle, rgba(111,124,255,.75), rgba(111,124,255,0) 68%)"},
+    {"id":"n3","t":"text","name":"Eyebrow","parent":"n1","x":96,"y":112,"w":600,"text":"LUMA 1.0","fs":34,"fw":600,"ls":0.22,"color":"#aab4ff"},
+    {"id":"n4","t":"text","name":"Headline","parent":"n1","x":96,"y":172,"w":900,"h":290,"text":"A better computer.","fs":142,"fw":650,"lh":1,"ls":-0.035,"color":"#ffffff"},
+    {"id":"n5","t":"image","name":"Photo","parent":"n1","x":96,"y":520,"w":888,"h":420,"r":32,"asset":"studio"},
+    {"id":"n6","t":"text","name":"Date","parent":"n1","x":96,"y":980,"w":800,"text":"October 14 · simplyluma.com","fs":30,"color":"#c9ccdf"},
+    {"id":"n7","t":"frame","name":"Web hero","x":1240,"y":0,"w":1440,"h":900,"fill":"#f6f3ee"},
+    {"id":"n8","t":"text","name":"Wordmark","parent":"n7","x":64,"y":34,"w":200,"text":"Luma","fs":30,"fw":700,"ls":-0.02,"color":"#16161a"},
+    {"id":"n9","t":"text","name":"Nav","parent":"n7","x":1030,"y":40,"w":350,"text":"Features   Apps   Download","fs":20,"color":"#5a5a60","align":"right"},
+    {"id":"n10","t":"text","name":"Headline","parent":"n7","x":64,"y":210,"w":700,"h":190,"text":"Your computer, calm again.","fs":84,"fw":650,"lh":1.04,"ls":-0.03,"color":"#16161a"},
+    {"id":"n11","t":"text","name":"Subhead","parent":"n7","x":64,"y":430,"w":600,"h":72,"text":"Luma 1.0 arrives October 14. Free on every computer you own.","fs":26,"lh":1.4,"color":"#5a5a60"},
+    {"id":"n12","t":"rect","name":"Button","parent":"n7","x":64,"y":548,"w":264,"h":72,"r":36,"fill":"#16161a"},
+    {"id":"n13","t":"text","name":"Button label","parent":"n7","x":64,"y":569,"w":264,"text":"Download Luma","fs":24,"fw":600,"color":"#ffffff","align":"center"},
+    {"id":"n14","t":"image","name":"Hero image","parent":"n7","x":790,"y":150,"w":586,"h":640,"r":32,"asset":"writing","shadow":true},
+    {"id":"n15","t":"frame","name":"Poster A3","x":2780,"y":0,"w":842,"h":1191,"fill":"#e9e2d6"},
+    {"id":"n16","t":"image","name":"Photo","parent":"n15","x":56,"y":56,"w":730,"h":720,"asset":"terrace"},
+    {"id":"n17","t":"text","name":"Title","parent":"n15","x":56,"y":822,"w":730,"h":170,"text":"Come see what’s next.","ff":"Instrument Serif","fs":88,"lh":1,"ls":-0.01,"color":"#1d1a15"},
+    {"id":"n18","t":"text","name":"Details","parent":"n15","x":56,"y":1070,"w":730,"text":"Launch night · The Loft · October 14, 7:30 pm","fs":26,"color":"#5b5448"},
+    {"id":"n19","t":"ellipse","name":"Sticker","parent":"n15","x":626,"y":700,"w":150,"h":150,"fill":"#e8553b","rot":-12},
+    {"id":"n20","t":"text","name":"Sticker label","parent":"n15","x":626,"y":752,"w":150,"text":"FREE","fs":36,"fw":800,"color":"#ffffff","align":"center","rot":-12}
+  ]
+}
